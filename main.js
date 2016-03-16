@@ -22,14 +22,17 @@
 //Outputs: number from 1 to 6
 
 function sixSidedDie() {
-	this.number = [1, 2, 3, 4, 5, 6];
 	this.roll = function () {
 
 		var result = 0;
 		result = Math.floor(Math.random() * 6) + 1;
-		this.number = result;    
+		return result;    
 	}	
 }
+
+//die = new sixSidedDie;
+//console.log(die.roll());
+
 
 
 //Create a function called getProbabilities that will simulate rolling two die 1000 times. 
@@ -51,9 +54,6 @@ function getProbabilities() {
 
 			var die1 = new sixSidedDie;
 			var die2 = new sixSidedDie; 
-
-			die1.roll();
-			die2.roll();
 
 
 			total = die1.roll() + die2.roll();
