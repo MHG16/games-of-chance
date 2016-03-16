@@ -1,8 +1,8 @@
 
-function playingCard() {
-	this.suit = ['spades', 'hearts', 'clubs', 'diamonds'];
-	this.value = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'King', 'Queen'];
-}
+// function playingCard() {
+// 	this.suit = ['spades', 'hearts', 'clubs', 'diamonds'];
+// 	this.value = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'King', 'Queen'];
+// }
 
 function sixSidedDie() {
 	this.number = [1, 2, 3, 4, 5, 6];
@@ -23,14 +23,15 @@ function getProbabilities(die1, die2) {
 
 	this.sum = function () {
 
-		var occurrences = [];
+		var occurrences = {};
 		var numRolls = 1000;
-		var total = 0;
+	
 
 		for (var i = 0; i < numRolls; i++) {
 
-			die1 = sixSidedDie();
-			die2 = sixSidedDie(); 
+			var total = 0;
+			die1 = sixSidedDie.roll();
+			die2 = sixSidedDie.roll(); 
 
 			total = die1 + die2;
 
@@ -47,5 +48,11 @@ function getProbabilities(die1, die2) {
 
 	}
 }
+
+var result = getProbabilities();
+console.log(result);
+
+
+
 
 
