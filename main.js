@@ -1,3 +1,6 @@
+//Create a constructor that builds objects representing a generic playing card. 
+//The playing card should keep track of each instances suit and value (Ace, 2, 3, ... Jack, Queen, King).
+
 
 //Inputs: None
 //Outputs: suit and value
@@ -9,6 +12,12 @@
 
 
 
+//Create a constructor that builds objects representing a six sided die. 
+//The die should keep track of the current number that it shows (1-6) and have a roll 
+//method that will simulate rolling the die. 
+//Rolling the die should change the current number.
+
+
 //Inputs: None
 //Outputs: number from 1 to 6
 
@@ -18,9 +27,14 @@ function sixSidedDie() {
 
 		var result = 0;
 		result = Math.floor(Math.random() * 6) + 1;
-		return result;    
+		this.number = result;    
 	}	
 }
+
+
+//Create a function called getProbabilities that will simulate rolling two die 1000 times. 
+//The function should return an array that shows the number of times the sum of the two die added up 
+//to 2, 3, 4, ... 12. 
 
 
 //Inputs: None.  
@@ -35,10 +49,14 @@ function getProbabilities() {
 
 			var total = 0;
 
-			die1 = sixSidedDie.roll();
-			die2 = sixSidedDie.roll(); 
+			var die1 = new sixSidedDie;
+			var die2 = new sixSidedDie; 
 
-			total = die1 + die2;
+			die1.roll();
+			die2.roll();
+
+
+			total = die1.roll() + die2.roll();
 
 			if (total in occurrences) {
 			//Update it's number on the list one by one
@@ -50,8 +68,8 @@ function getProbabilities() {
 				occurrences[total] = 1;
 			}
 		} 
-	}
 }
+
 
 var result = getProbabilities();
 console.log(result);
