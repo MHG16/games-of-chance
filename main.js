@@ -1,8 +1,16 @@
 
+//Inputs: None
+//Outputs: suit and value
+
 // function playingCard() {
 // 	this.suit = ['spades', 'hearts', 'clubs', 'diamonds'];
 // 	this.value = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'King', 'Queen'];
 // }
+
+
+
+//Inputs: None
+//Outputs: number from 1 to 6
 
 function sixSidedDie() {
 	this.number = [1, 2, 3, 4, 5, 6];
@@ -15,13 +23,9 @@ function sixSidedDie() {
 }
 
 
-
-
 //Inputs: None.  
 //Outputs: How many occurrences for each possible combination: 2, 3, 4,...12.   
-function getProbabilities(die1, die2) {
-
-	this.sum = function () {
+function getProbabilities() {
 
 		var occurrences = {};
 		var numRolls = 1000;
@@ -30,6 +34,7 @@ function getProbabilities(die1, die2) {
 		for (var i = 0; i < numRolls; i++) {
 
 			var total = 0;
+
 			die1 = sixSidedDie.roll();
 			die2 = sixSidedDie.roll(); 
 
@@ -44,8 +49,7 @@ function getProbabilities(die1, die2) {
 			//Add it to the list with a count of one
 				occurrences[total] = 1;
 			}
-		}
-
+		} 
 	}
 }
 
