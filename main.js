@@ -5,10 +5,10 @@
 //Inputs: None
 //Outputs: suit and value
 
-// function playingCard() {
-// 	this.suit = ['spades', 'hearts', 'clubs', 'diamonds'];
-// 	this.value = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'King', 'Queen'];
-// }
+function playingCard() {
+this.suit = ['spades', 'hearts', 'clubs', 'diamonds'];
+this.value = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'King', 'Queen'];
+ }
 
 
 
@@ -51,22 +51,22 @@ function getProbabilities() {
 		for (var i = 0; i < numRolls; i++) {
 
 			var total = 0;
-
+			//need to create 2 sixSidedDie objects
 			var die1 = new sixSidedDie;
 			
 			var die2 = new sixSidedDie; 
-
+			//sum of running roll method on sixSidedDie two times
 			total = die1.roll() + die2.roll();
 		
-
+			//if the current number is found in the object add to that number
 			if (total in occurrences) {
-			//Update it's number on the list one by one
+	
 			occurrences[total]++;
 
 			}
 			//Otherwise
 			else {
-			//Add it to the list with a count of one
+			//Add the number to the list with a count of one
 				occurrences[total] = 1;
 			}
 		} 
