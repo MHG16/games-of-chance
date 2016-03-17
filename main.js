@@ -53,10 +53,13 @@ function getProbabilities() {
 			var total = 0;
 
 			var die1 = new sixSidedDie;
+			
 			var die2 = new sixSidedDie; 
 
+			
 
 			total = die1.roll() + die2.roll();
+			console.log(total);
 
 			if (total in occurrences) {
 			//Update it's number on the list one by one
@@ -72,7 +75,7 @@ function getProbabilities() {
 
 
 var result = getProbabilities();
-console.log(result);
+//console.log(result);
 
 
 
